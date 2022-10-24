@@ -1,21 +1,21 @@
 import config from "config";
-import { ConnectionOptions, connect } from "mongoose";
+import { ConnectOptions, connect } from "mongoose";
 
 const connectDB = async () => {
 	try {
 		const mongoURI: string = config.get("mongoURI");
-		const options: ConnectionOptions = {
-			useNewUrlParser: true,
-			useCreateIndex: true,
-			useFindAndModify: false,
-			useUnifiedTopology: true,
+		const options: ConnectOptions = {
+			autoIndex: true,
+			autoCreate: true,
 		};
 		await connect(mongoURI, options);
-		// tslint:disable-next-line:no-console
 		console.log("MongoDB Connected...");
-	} catch (err) {
-		// tslint:disable-next-line:no-console
-		console.error(err.message);
+	} catch (error) {
+		let message;
+		if (error instanceof Error) message = error.message;
+		else message = String(error);
+
+		console.error(message);
 		// Exit process with failure
 		process.exit(1);
 	}

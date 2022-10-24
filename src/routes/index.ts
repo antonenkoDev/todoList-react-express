@@ -8,7 +8,7 @@ class AppRouter {
             res.send("API Running");
         });
         this.app.use("/api/todos", todosRouter);
-        this.app.use("/api/user", userRouter);
+        this.app.use("/api/users", userRouter);
     }
 }
 

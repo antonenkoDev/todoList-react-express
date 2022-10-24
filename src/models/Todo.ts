@@ -1,19 +1,23 @@
-import { Model, model, Schema } from "mongoose";
+import { Model, model, ObjectId, Schema } from "mongoose";
 
 export interface ITodo extends Document {
 	description: string;
 	isCompleted: boolean;
+	userId: ObjectId;
 }
 
 const todoSchema: Schema = new Schema({
 	description: {
-		unique: true,
 		type: String,
 		required: true,
 	},
-	isComplete: {
+	isCompleted: {
 		type: Boolean,
 		required: true,
+	},
+	userId: {
+		type: Schema.Types.ObjectId,
+		ref: "User",
 	},
 });
 

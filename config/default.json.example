@@ -1,5 +1,0 @@
-{
-	"mongoURI": "mongodb+srv://user:password@cluster0.bfswh.mongodb.net/todoList?retryWrites=true",
-	"jwtSecret": "jwtSecretToken",
-	"jwtExpiration": 360000
-}

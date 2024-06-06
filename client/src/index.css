@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Дополнительные стили для темной темы */
+body.dark {
+    @apply bg-gray-900 text-white;
+}
+
+.dark .bg-gray-100 {
+    @apply bg-gray-900;
+}
+
+.dark .text-gray-900 {
+    @apply text-white;
+}
+
+.dark .bg-white {
+    @apply bg-gray-800;
+}
+
+/* Стили для элементов формы в темной теме */
+.dark input,
+.dark textarea,
+.dark select {
+    @apply bg-gray-800 text-white placeholder-gray-400 border-gray-600;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+    @apply text-gray-400;
+}

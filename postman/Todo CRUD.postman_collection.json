@@ -9,11 +9,14 @@
 		{
 			"name": "USER POST with strong password",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Antonenko6\",\n    \"password\": \"Antonenko6\"\n}",
+					"raw": "{\n    \"email\": \"test@test.com\",\n    \"password\": \"Antonenko6\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,14 +24,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/users/register",
+					"raw": "{{url}}/api/auth/register",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
-						"users",
+						"auth",
 						"register"
 					]
 				}
@@ -42,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\":\"The King of The Beats\",\n    \"password\": \"isgonna\"\n}",
+					"raw": "{\n    \"email\":\"test2@test.com\",\n    \"password\": \"simplePass\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -50,14 +52,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/users/register",
+					"raw": "{{url}}/api/auth/register",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
-						"users",
+						"auth",
 						"register"
 					]
 				}
@@ -71,7 +72,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"The King of The Beats\",\n    \"password\" : \"isgonnarockthatplace\"\n    }",
+					"raw": "{\n    \"email\": \"test6@test.com\",\n    \"password\" : \"pvksdjvbks\"\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -79,11 +80,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/auth/login",
+					"raw": "{{url}}/api/auth/login",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"auth",
@@ -118,15 +118,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/todos/",
+					"raw": "{{url}}/api/todo",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
-						"todos",
-						""
+						"todo"
 					]
 				},
 				"description": "POST - Create new Todo "
@@ -158,11 +156,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/todos/",
+					"raw": "{{url}}/api/todos/",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"todos",
@@ -176,6 +173,16 @@
 		{
 			"name": "Third POST NO AUTH",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjYyMTdmM2IzMThkMjRiYzIxYzQ0Y2MiLCJpYXQiOjE3MTc3MDQ4NjQsImV4cCI6MTcxNzcwODQ2NH0.WW1KZfoM3QFH5rXXNR1wdTMEcp25yyffm7B1RCMYV9E",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -188,15 +195,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/todos/",
+					"raw": "{{url}}/api/todo",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
-						"todos",
-						""
+						"todo"
 					]
 				},
 				"description": "POST - Create new Todo "
@@ -206,6 +211,16 @@
 		{
 			"name": "POST TODO 3 symbols error",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjYyMTdmM2IzMThkMjRiYzIxYzQ0Y2MiLCJpYXQiOjE3MTc3MDQ4NjQsImV4cCI6MTcxNzcwODQ2NH0.WW1KZfoM3QFH5rXXNR1wdTMEcp25yyffm7B1RCMYV9E",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -218,14 +233,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/todos",
+					"raw": "{{url}}/api/todo",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
-						"todos"
+						"todo"
 					]
 				}
 			},
@@ -242,7 +256,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzU2OWIxOGRmYzE0YmQ2Y2Y5ZTllZjEiLCJpYXQiOjE2NjY2Mjg5MTZ9.HX2eroh1woTGrXqzU-Onp86NqhodBOWQMP_TuoZFgqA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjYyMTdmM2IzMThkMjRiYzIxYzQ0Y2MiLCJpYXQiOjE3MTc3MDQ4NjQsImV4cCI6MTcxNzcwODQ2NH0.WW1KZfoM3QFH5rXXNR1wdTMEcp25yyffm7B1RCMYV9E",
 							"type": "string"
 						}
 					]
@@ -254,14 +268,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/api/todos/",
+					"raw": "{{url}}/api/todo/",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
-						"todos",
+						"todo",
 						""
 					]
 				}
@@ -274,14 +287,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/todos/6356c52841ec67d012377334",
+					"raw": "{{url}}/api/todo/6356c52841ec67d012377334",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
-						"todos",
+						"todo",
 						"6356c52841ec67d012377334"
 					]
 				}
@@ -304,14 +316,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/todos/6356c52841ec67d012377334",
+					"raw": "{{url}}/api/todo/6356c52841ec67d012377334",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
-						"todos",
+						"todo",
 						"6356c52841ec67d012377334"
 					]
 				}
@@ -343,14 +354,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/todos/6356c9d14b675d70e429f60e",
+					"raw": "{{url}}/api/todo/6356c9d14b675d70e429f60e",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
-						"todos",
+						"todo",
 						"6356c9d14b675d70e429f60e"
 					],
 					"query": [
@@ -380,14 +390,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/todos/6356c6a4c6a6df6dc3a2a8c5",
+					"raw": "{{url}}/api/todo/6356c6a4c6a6df6dc3a2a8c5",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
-						"todos",
+						"todo",
 						"6356c6a4c6a6df6dc3a2a8c5"
 					],
 					"query": [

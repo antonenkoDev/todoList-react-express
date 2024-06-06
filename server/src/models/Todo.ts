@@ -1,9 +1,9 @@
 import { Model, model, ObjectId, Schema } from 'mongoose';
 
-export interface ITodo extends Document {
+export interface ITodo {
   description: string;
   isCompleted: boolean;
-  userId: ObjectId;
+  userId: string;
 }
 
 const todoSchema: Schema = new Schema({

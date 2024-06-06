@@ -1,5 +1,5 @@
 # Project Name
-## TODO Test Project 
+## TODO Test Project
 ### React + TailwindCSS + ExpressJs + MongoDB (mongoose) + PostgreSQL (Prisma) + SwaggerDocs
 
 This guide will walk you through the setup and deployment of the project on your local machine. Follow these steps to get started:

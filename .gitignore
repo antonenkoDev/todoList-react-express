@@ -1,4 +1,7 @@
-node_modules
-dist
-package-lock.json
-config/default.json
+/client/node_modules
+/client/.env
+/client/dist
+/server/node_modules/
+/server/.env
+/server/dist
+/.idea/
